@@ -1,0 +1,35 @@
+{
+  "name": "thesis_pro_1",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "apeman-react-slideshow": "^2.0.8",
+    "colors.css": "^3.0.0",
+    "jquery": "^3.2.1",
+    "nodemailer": "^4.4.1",
+    "re-bulma": "^0.4.5",
+    "react": "^15.6.1",
+    "react-cookies": "^0.1.0",
+    "react-document-title": "^2.0.3",
+    "react-dom": "^15.6.1",
+    "react-facebook-login": "^3.7.0",
+    "react-image-gallery": "^0.8.3",
+    "react-images-upload": "^1.1.1",
+    "react-images-uploader": "^1.1.0",
+    "react-load-script": "0.0.6",
+    "react-picture-show": "^1.4.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.13",
+    "redux": "^3.7.2",
+    "typekit": "^0.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "ab-slideshow": "^1.1.4"
+  }
+}
