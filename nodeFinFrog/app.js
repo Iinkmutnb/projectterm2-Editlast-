@@ -260,7 +260,27 @@ router.route('/checkProductPromotion').post( function(req,res) {
 router.route('/insertProductPromotion').post( function(req,res) { 
         
            access.insertProductPromotion(res,req.body.idProduct,req.body.discount);
-}); 
+});
+router.route('/selectProductPromotion').post( function(req,res) { 
+    
+       access.selectProductPromotion(res,req.body.id);
+});
+router.route('/editDetailProductPromotion').post( function(req,res) { 
+    
+       access.editDetailProductPromotion(res,req.body.idPromotion,req.body.idProduct,req.body.discount);
+});
+router.route('/deleteDetailProductPromotion').post( function(req,res) { 
+    
+       access.deleteDetailProductPromotion(res,req.body.idPromotion);
+});
+router.route('/selectProdcutPromotionPageProductPro').post( function(req,res) { 
+    
+       access.selectProdcutPromotionPageProductPro(res);
+});
+router.route('/selectOneProdcutPromotionPageProductPro').post( function(req,res) { 
+    
+       access.selectOneProdcutPromotionPageProductPro(res,req.body.code);
+});
 app.use('/', router);
 
 /*var express = require('express');

@@ -38,6 +38,7 @@ import PAGE_BASKET from './home/pageBasket/pageBasket.js'
 import HEAD_PAGE_BASKET from './home/pageBasket/head.js'
 import DETAIL_PRODUCT_PROMOION from './home/pageProductPromotion/detailProductPromotion.js';
 import ADD_DETAIL_PRODUCT_PROMOTION from './home/pageProductPromotion/addDetailProductPromotion.js';
+import EDIT_DETAIL_PRODUCT_PROMOTION from './home/pageProductPromotion/editDetailProductPromotion.js';
 import queryString from 'query-string';
 class App extends Component {
   constructor(props) {
@@ -179,7 +180,9 @@ class App extends Component {
                          <Route path='/editAdmin/officer/deleteOfficer'   render={(props) => <DELETE_OFFICER_ADMIN  setExact={this.setExact}/>} />
                                        <Route path='/editAdmin/officer/editsOfficer:code'   render={(props) => <EDITS_OFFICER_ADMIN {...props}   setExact={this.setExact}/>} />                
                          <Route path='/editAdmin/productPromotion'   render={(props) => <DETAIL_PRODUCT_PROMOION    setExact={this.setExact}/>} />   
-                         <Route path='/editAdmin/addDetailProductPromotion'   render={(props) => <ADD_DETAIL_PRODUCT_PROMOTION    setExact={this.setExact}/>} />      
+                         <Route path='/editAdmin/addDetailProductPromotion'   render={(props) => <ADD_DETAIL_PRODUCT_PROMOTION    setExact={this.setExact}/>} />
+                         <Route path='/editAdmin/editDetailProductPromotion:id'   render={(props) => < EDIT_DETAIL_PRODUCT_PROMOTION   {...props} setExact={this.setExact}/>} />       
+                                      
                </Column>
            
              </td>
@@ -244,6 +247,7 @@ class App extends Component {
                         
                         <Route path='/editAdmin/productPromotion'   render={(props) => <DETAIL_PRODUCT_PROMOION {...props}   setExact={this.setExact}/>} />  
                         <Route path='/editAdmin/addDetailProductPromotion'   render={(props) => <ADD_DETAIL_PRODUCT_PROMOTION    setExact={this.setExact}/>} />
+                        <Route path='/editAdmin/editDetailProductPromotion:id'   render={(props) => < EDIT_DETAIL_PRODUCT_PROMOTION   {...props} setExact={this.setExact}/>} />   
                       </Column>
                     </Column>
                    

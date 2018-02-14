@@ -4,7 +4,7 @@ import queryString from 'query-string';
 import {Hero,HeroHead,Nav,Container,NavGroup,NavToggle,NavItem,HeroBody,Box,Label,Input,Textarea,Button,Columns,Column,Group,Notification}  from 're-bulma';
 import {Link} from 'react-router-dom';
 import SHOW_PRODUCT from  '../home/head/showProduct.js';
-import SHOW_MODAL from '../home/head/showModal';
+import SHOW_MODAL_PROMOTION from '../home/head/showModalPromotion';
 import cookie from 'react-cookies';
 class productPro extends Component {
     constructor(props) {
@@ -20,7 +20,7 @@ class productPro extends Component {
     }
     
     componentWillMount() {
-        fetch('http://localhost:9000/showProductPro', {
+        fetch('http://localhost:9000/selectProdcutPromotionPageProductPro', {
             headers: {
                       'Content-Type':'application/x-www-form-urlencoded'
           
@@ -33,7 +33,7 @@ class productPro extends Component {
            
          })
          .then((response) => response.json())
-         .then((data) => {//console.log(data)
+         .then((data) => {console.log(data)
           var products=[];
           data.map((product) =>{
             
@@ -57,7 +57,7 @@ class productPro extends Component {
     showModal = (productCode) => {
         this.setState({showModal: true})
     
-        fetch('http://localhost:9000/showModal', {
+        fetch('http://localhost:9000/selectOneProdcutPromotionPageProductPro', {
           headers: {
                     'Content-Type':'application/x-www-form-urlencoded'
         
@@ -71,7 +71,7 @@ class productPro extends Component {
        })
        .then((response) => response.json())   
        .then((data) => {
-      
+     
         this.setState({dataModal: data})
     
        
@@ -98,6 +98,7 @@ class productPro extends Component {
            takeBasket.push(productCode)
            cookie.save('takeBasket',takeBasket, { path: '/' })
          }
+         window.alert("เพิ่มสินค้าในตระกร้าแล้ว")
          }
   
 
@@ -117,8 +118,8 @@ class productPro extends Component {
                           <Container hasTextCentered>
                             <h2>สินค้าโปรโมชั่น</h2>
                           </Container>
-             <SHOW_PRODUCT product={this.state.product} showModal={this.showModal} />
-          <SHOW_MODAL showModal={this.state.showModal} dataModal={this.state.dataModal} setFalseShowModal={this.setFalseShowModal} takeBaskets={this.takeBaskets}/>
+             <SHOW_PRODUCT product={this.state.product} showModal={this.showModal} takeBaskets={this.takeBaskets} />
+          <SHOW_MODAL_PROMOTION showModal={this.state.showModal} dataModal={this.state.dataModal} setFalseShowModal={this.setFalseShowModal} takeBaskets={this.takeBaskets}/>
           </Notification >
           </Box>
           </Container >

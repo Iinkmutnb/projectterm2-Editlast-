@@ -117,7 +117,7 @@ showModalLogin=(value)=>{
         </Link>
         </li>
       <li>
-        <Link  to="/s" style={{outline:'0', textDecoration: 'none',marginHorizontal:'0px'}} >
+        <Link  to="/productPro" style={{outline:'0', textDecoration: 'none',marginHorizontal:'0px'}} >
         
         สินค้า Promotion
             

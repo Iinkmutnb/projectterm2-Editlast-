@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import {Table,Td,Thead,Tr,Th,Tbody,Button,Notification,Input,Label,Group,Title} from 're-bulma';
+import {Table,Td,Thead,Tr,Th,Tbody,Button,Notification,Input,Label,Group,Title,Modal,Content} from 're-bulma';
 import cookie from 'react-cookies';
 import queryString from 'query-string';
 import {Link} from 'react-router-dom';
-import  '../../home/css/pageProductPromotion/detailProductPromotion.css';
+
 
 class addDetailProductPromotion extends Component {
     constructor(props) {
@@ -16,8 +16,8 @@ class addDetailProductPromotion extends Component {
         discount:0,
         checkIdProduct:0,//ค่า 1 ไม่รหัสสินค้า,ค่า 2สินค้านี้มี โปรโมชั่นแล้ว,กรณี = 0 จะทำการinsert 
         checkDiscout:0,//ค่า 1 จำนวน เปอร์เซอร์ที่ลด น้อยกว่า0 หรือ มากกว่า 100
-        checkInsert:0//ค่า 1 insert สำเร็จ ค่า 2 เกิดข้อผิดพลาด การ insert
-
+        checkInsert:0,//ค่า 1 insert สำเร็จ ค่า 2 เกิดข้อผิดพลาด การ insert
+        isOpen:false,
 
                         }
        
@@ -98,7 +98,11 @@ class addDetailProductPromotion extends Component {
                                
                              })
                              .then((response) => response.json())
-                             .then((data) => {})
+                             .then((data) => {
+                                 //insert สำเร็จ
+                                 this.setState({ isOpen: true })
+                                this.setState({checkInsert:1})
+                             })
 
                        }
                        else {
@@ -107,6 +111,7 @@ class addDetailProductPromotion extends Component {
                        }
                     }else if(data!=''){
                         this.setState( {checkIdProduct:2})
+                        this.setState({ isOpen: true })
 
                     }
                 })
@@ -124,7 +129,10 @@ class addDetailProductPromotion extends Component {
     reset=()=>{
         this.setState({idProduct:'',discount:''})
     }
-  
+    closeModal=()=>{
+        this.setState({ isOpen: false })
+        window.location.reload();
+    }
 
 
     render() {
@@ -163,6 +171,37 @@ class addDetailProductPromotion extends Component {
           </div>
      
            </Notification>
+          { this.state.checkInsert==1?(
+           <Modal
+           type="card"
+           headerContent=""
+           footerContent={<div style={{ padding: '20px'}} ></div>}
+           isActive={this.state.isOpen}
+           onCloseRequest={this.closeModal}
+           >
+           <Content>
+           <Label>เพิ่มข้อมูลโปรโมชั่นแล้ว</Label>
+          
+           </Content>
+           </Modal>):(<div>{this.state.checkInsert==2?(
+            <Modal
+           type="card"
+           headerContent=""
+           footerContent={<div style={{ padding: '20px'}} ></div>}
+           isActive={this.state.isOpen}
+           onCloseRequest={() => this.setState({ isOpen: false })}
+           >
+           <Content>
+           <Label>เกิดข้อผิดพลาด</Label>
+          
+           </Content>
+           </Modal>
+               
+               ):(<div></div>)}
+         
+          </div>
+           )
+          }
             </div>
 
         );}

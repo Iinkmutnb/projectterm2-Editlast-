@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
-import {Table,Td,Thead,Tr,Th,Tbody,Button} from 're-bulma';
+import {Table,Td,Thead,Tr,Th,Tbody,Button,Modal,Content,Label} from 're-bulma';
 import cookie from 'react-cookies';
 import queryString from 'query-string';
 import {Link} from 'react-router-dom';
 import  '../../home/css/pageProductPromotion/detailProductPromotion.css';
+import SHOW_MODAL_PROMOTION from '../../home/head/showModalPromotion';
+
 
 class detailProductPromotion extends Component {
     constructor(props) {
@@ -17,6 +19,12 @@ class detailProductPromotion extends Component {
         subName:'',
         address:'',
         phone:'',
+        showModalSubmit:false,
+        showModalDeleteSuccess:false,
+        prductCode:'',
+        idPromotion:'',
+        showModalDetailProduct:false,
+        prodductCodeDetail:'',
 
 
                         }
@@ -54,8 +62,67 @@ class detailProductPromotion extends Component {
         
 
     }
+    deleteProductPromotoin=()=>{
+        this.setState({showModalSubmit:false})
+        console.log(this.state.idPromotion)
+       fetch('http://localhost:9000/deleteDetailProductPromotion', {
+            headers: {
+                      'Content-Type':'application/x-www-form-urlencoded'
+          
+                     },
+         
+         
+             method: "POST",
+             body:  queryString.stringify({'idPromotion':this.state.idPromotion})
+            
+           
+         })
+         .then((response) => response.json())
+         .then((data) => {
+            window.location.reload();
+           
+          
+         
+          })
+
+    }
+    showModalSubmit=(code,idPromotion)=>{
+      
+          this.setState({showModalSubmit:true,prductCode:code,idPromotion:idPromotion})
+       
+    }
+    closeModalSubmit=()=>{
+    
+        this.setState({showModalSubmit:false})
+    }
+    showDetail=(code)=>{
 
   
+     
+        fetch('http://localhost:9000/selectOneProdcutPromotionPageProductPro', {
+            headers: {
+                      'Content-Type':'application/x-www-form-urlencoded'
+          
+                     },
+         
+         
+             method: "POST",
+             body:  queryString.stringify({'code':code})
+            
+           
+         })
+         .then((response) => response.json())   
+         .then((data) => {
+       
+            this.setState({showModalDetailProduct:true,prodductCodeDetail:data})
+      
+         
+          })
+
+    }
+    closeModalDetail=()=>{
+        this.setState({showModalDetailProduct:false})
+    }
 
 
     render() {
@@ -78,11 +145,27 @@ class detailProductPromotion extends Component {
                 </Thead>
                 {this.state.detailBuyProduct!=''?( <Tbody>
                     {this.state.detailBuyProduct.map((product,key) =><Tr>
-                        <Td>{key+1}</Td>  <Td>{product.code_product}</Td> <Td>{product.name}</Td> <Td><Button>ดูลายละเอียด</Button></Td> <Td><Button>แก้ไข</Button></Td> <Td><Button>ลบ</Button></Td>
+                        <Td>{key+1}</Td>  <Td>{product.code_product}</Td> <Td>{product.name}</Td> <Td><Button onClick={()=>this.showDetail(product.code_product)}>ดูรายละเอียด</Button></Td> 
+                        <Td><Button style={{padding:'0px'}}><Link style={{padding:'6px'}} to={"/editAdmin/editDetailProductPromotion"+product.id_product_promotion} >แก้ไข</Link></Button></Td> <Td><Button onClick={()=>this.showModalSubmit(product.code,product.id_product_promotion)}>ลบ</Button></Td>
                         </Tr>)}
                     
                      </Tbody>):(<div style={{marginTop:'15px'}}>ยังไม่มีสินค้าที่จัดโปรโมชั่น</div>)}
                </Table>
+               <Modal
+                    type="card"
+                    headerContent=""
+                    footerContent={<div style={{ padding: '20px'}} ></div>}
+                    isActive={this.state.showModalSubmit}
+                    onCloseRequest={this.closeModalSubmit}
+                    >
+                    <Content>
+                        <center>คุณต้องการลบโปรโมชั่น<div style={{fontWeight:' bold'}}>รหัสสินค้า {this.state.prductCode}</div> หรือไม่?</center>
+                       <center> <Button onClick={()=>this.deleteProductPromotoin()}>ใช่</Button> <Button onClick={this.closeModalSubmit}>ไม่</Button></center>
+           </Content>
+           </Modal>
+           {this.state.prodductCodeDetail!=''?(<div>
+           <SHOW_MODAL_PROMOTION showModal={this.state.showModalDetailProduct} dataModal={this.state.prodductCodeDetail} setFalseShowModal={this.closeModalDetail} />
+       </div> ):(<div></div>)}
             </div>
         );}
     }

@@ -38,6 +38,12 @@ var detailProductPromotion=require('./pageProductPromotion/detailProductPromotio
 var checkIdProduct=require('./pageProductPromotion/checkIdProduct.js');  
 var checkProductPromotion=require('./pageProductPromotion/checkProductPromotion.js');  
 var insertProductPromotion=require('./pageProductPromotion/insertProductPromotion.js'); 
+var selectProductPromotion=require('./pageProductPromotion/selectProductPromotion.js'); 
+var editDetailProductPromotion=require('./pageProductPromotion/editDetailProductPromotion.js');
+var deleteDetailProductPromotion=require('./pageProductPromotion/deleteDetailProductPromotion.js'); 
+var selectProdcutPromotionPageProductPro=require('./pageHome/selectProdcutPromotionPageProductPro.js');
+var selectOneProdcutPromotionPageProductPro=require('./pageHome/selectOneProdcutPromotionPageProductPro.js');
+
 
 module.exports={
     querys: function(name,res) {
@@ -179,5 +185,21 @@ module.exports={
     },
     insertProductPromotion: function(res,idProduct,discount) {
         insertProductPromotion.insertProductPromotion(res,idProduct,discount);
-    },    
+    },      
+    selectProductPromotion: function(res,id) {
+        selectProductPromotion.selectProductPromotion(res,id);
+    },     
+    editDetailProductPromotion: function(res,idPromotion,idProduct,discount) {
+            editDetailProductPromotion.editDetailProductPromotion(res,idPromotion,idProduct,discount);
+    }, 
+    deleteDetailProductPromotion: function(res,idPromotion) {
+        deleteDetailProductPromotion.deleteDetailProductPromotion(res,idPromotion);
+    },
+        selectProdcutPromotionPageProductPro: function(res) {
+            selectProdcutPromotionPageProductPro.selectProdcutPromotionPageProductPro(res);
+    },
+    selectOneProdcutPromotionPageProductPro: function(res,code) {
+        
+        selectOneProdcutPromotionPageProductPro.selectOneProdcutPromotionPageProductPro(res,code);
+    },
 }
