@@ -20,7 +20,9 @@
     "react-picture-show": "^1.4.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.13",
+    "react-slick": "^0.18.1",
     "redux": "^3.7.2",
+    "slick-carousel": "^1.8.1",
     "typekit": "^0.1.1"
   },
   "scripts": {

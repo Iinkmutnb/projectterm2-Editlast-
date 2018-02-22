@@ -43,6 +43,7 @@ var editDetailProductPromotion=require('./pageProductPromotion/editDetailProduct
 var deleteDetailProductPromotion=require('./pageProductPromotion/deleteDetailProductPromotion.js'); 
 var selectProdcutPromotionPageProductPro=require('./pageHome/selectProdcutPromotionPageProductPro.js');
 var selectOneProdcutPromotionPageProductPro=require('./pageHome/selectOneProdcutPromotionPageProductPro.js');
+var showPromotionInHome=require('./pageHome/showPromotionInHome.js');
 
 
 module.exports={
@@ -201,5 +202,9 @@ module.exports={
     selectOneProdcutPromotionPageProductPro: function(res,code) {
         
         selectOneProdcutPromotionPageProductPro.selectOneProdcutPromotionPageProductPro(res,code);
+    },
+    showPromotionInHome: function(res) {
+        
+        showPromotionInHome.showPromotionInHome(res);
     },
 }

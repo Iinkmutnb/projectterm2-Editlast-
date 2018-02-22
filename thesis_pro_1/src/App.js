@@ -39,6 +39,8 @@ import HEAD_PAGE_BASKET from './home/pageBasket/head.js'
 import DETAIL_PRODUCT_PROMOION from './home/pageProductPromotion/detailProductPromotion.js';
 import ADD_DETAIL_PRODUCT_PROMOTION from './home/pageProductPromotion/addDetailProductPromotion.js';
 import EDIT_DETAIL_PRODUCT_PROMOTION from './home/pageProductPromotion/editDetailProductPromotion.js';
+import SHOW_PROMOTION_IN_HOME from './home/home/showPromotionInHome.js';
+import SHOW_All_PRODUCT_IN_HOME from './home/home/showAllProductInhome.js';
 import queryString from 'query-string';
 class App extends Component {
   constructor(props) {
@@ -151,14 +153,16 @@ class App extends Component {
                  <div style={{ position: 'sticky', top:'0px',zIndex: '99'}}>
                  <Route path='/' exact={this.state.exact}   render={(props) => <TAP_MENU setExact={this.setExact}/>}   />
                  </div>
-               <Column  context="isChild" > 
-               <Route path='/' exact={this.state.exact}   component={BUTTON_FACE_LINE}/>
-               </Column>
+              
              
-               <Column  context="isChild" >
-               
-                 <Route path='/product'  render={(props) => <PRODUCT setExact={this.setExact}/>}  />
-                 <Route path='/' exact={this.state.exactProdcut} render={(props) => <PRODUCT setExact={this.setExact}/>}  />
+               <tr  context="isChild" >
+               <td>
+                
+                 <Route path='/product'  render={(props) => <SHOW_PROMOTION_IN_HOME setExact={this.setExact}/>}  />
+                 <Route path='/'   exact={this.state.exactProdcut} render={(props) => <SHOW_PROMOTION_IN_HOME setExact={this.setExact}/>}  />
+                 <Route path='/product'  render={(props) => <SHOW_All_PRODUCT_IN_HOME setExact={this.setExact}/>}  />
+                 <Route path='/'   exact={this.state.exactProdcut} render={(props) => <SHOW_All_PRODUCT_IN_HOME setExact={this.setExact}/>}  />
+                 
                  <Route path='/productPro'  render={(props) => <PRODUCT_PRO  setExact={this.setExact}/>}  /> 
                  <Route path='/pageLine'  render={(props) => <PAGE_LINE setExact={this.setExact}/>}  />
                  <Route path='/pageBasket'  render={(props) => <PAGE_BASKET setExact={this.setExact}/>}  />
@@ -182,10 +186,15 @@ class App extends Component {
                          <Route path='/editAdmin/productPromotion'   render={(props) => <DETAIL_PRODUCT_PROMOION    setExact={this.setExact}/>} />   
                          <Route path='/editAdmin/addDetailProductPromotion'   render={(props) => <ADD_DETAIL_PRODUCT_PROMOTION    setExact={this.setExact}/>} />
                          <Route path='/editAdmin/editDetailProductPromotion:id'   render={(props) => < EDIT_DETAIL_PRODUCT_PROMOTION   {...props} setExact={this.setExact}/>} />       
-                                      
+                      </td>                
+               </tr>
+               <Column  context="isChild" > 
+               <Route path='/' exact={this.state.exact}   component={BUTTON_FACE_LINE}/>
                </Column>
+              
            
              </td>
+        
             </tr>
            </table >
            
@@ -418,6 +427,11 @@ return (
       </div>
     );
 
+
+
+     <Column  context="isChild" > 
+               <Route path='/' exact={this.state.exact}   component={BUTTON_FACE_LINE}/>
+               </Column>
 
 */
 

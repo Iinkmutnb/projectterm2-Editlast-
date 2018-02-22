@@ -163,8 +163,15 @@ showModalLogin=(value)=>{
 <div >
  
 </div> ):(
-    <div className="container">
-  <div   style={{border:'solid 1px',backgroundColor:'#7FFFD4',height:'500px',overflow:' scroll'}}  className="shopping-cart">
+  
+    <div className="container"  style={{position: 'sticky', top:'0px',zIndex: '99'}}>
+    <div   style={{border:'solid 1px',backgroundColor:'#7FFFD4',height:'500px',overflow:' scroll',
+ 
+    position: 'absolute',
+    right: '0',
+    top: '0',
+    
+    }}  className="shopping-cart">
     <div className="shopping-cart-header">
       <i className="fa fa-shopping-cart cart-icon"></i><span className="badge">{this.state.countBasket}</span>
       <div className="shopping-cart-total">
@@ -190,6 +197,7 @@ showModalLogin=(value)=>{
 
     <a href="#" className="button">ไปหน้าตระกร้าสินค้า</a>
   </div> 
+
 </div>
 
 

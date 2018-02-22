@@ -281,6 +281,10 @@ router.route('/selectOneProdcutPromotionPageProductPro').post( function(req,res)
     
        access.selectOneProdcutPromotionPageProductPro(res,req.body.code);
 });
+router.route('/showPromotionInHome').post( function(req,res) { 
+    
+       access.showPromotionInHome(res);
+});
 app.use('/', router);
 
 /*var express = require('express');
