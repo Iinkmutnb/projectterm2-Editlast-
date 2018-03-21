@@ -184,14 +184,14 @@ module.exports={
     checkProductPromotion: function(res,idProduct) {
         checkProductPromotion.checkProductPromotion(res,idProduct);
     },
-    insertProductPromotion: function(res,idProduct,discount) {
-        insertProductPromotion.insertProductPromotion(res,idProduct,discount);
+    insertProductPromotion: function(res,idProduct,discount,start,end) {
+        insertProductPromotion.insertProductPromotion(res,idProduct,discount,start,end);
     },      
     selectProductPromotion: function(res,id) {
         selectProductPromotion.selectProductPromotion(res,id);
     },     
-    editDetailProductPromotion: function(res,idPromotion,idProduct,discount) {
-            editDetailProductPromotion.editDetailProductPromotion(res,idPromotion,idProduct,discount);
+    editDetailProductPromotion: function(res,idPromotion,idProduct,discount,start,end) {
+            editDetailProductPromotion.editDetailProductPromotion(res,idPromotion,idProduct,discount,start,end);
     }, 
     deleteDetailProductPromotion: function(res,idPromotion) {
         deleteDetailProductPromotion.deleteDetailProductPromotion(res,idPromotion);

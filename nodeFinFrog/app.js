@@ -259,7 +259,7 @@ router.route('/checkProductPromotion').post( function(req,res) {
 });  
 router.route('/insertProductPromotion').post( function(req,res) { 
         
-           access.insertProductPromotion(res,req.body.idProduct,req.body.discount);
+           access.insertProductPromotion(res,req.body.idProduct,req.body.discount,req.body.start,req.body.end);
 });
 router.route('/selectProductPromotion').post( function(req,res) { 
     
@@ -267,7 +267,7 @@ router.route('/selectProductPromotion').post( function(req,res) {
 });
 router.route('/editDetailProductPromotion').post( function(req,res) { 
     
-       access.editDetailProductPromotion(res,req.body.idPromotion,req.body.idProduct,req.body.discount);
+       access.editDetailProductPromotion(res,req.body.idPromotion,req.body.idProduct,req.body.discount,req.body.start,req.body.end);
 });
 router.route('/deleteDetailProductPromotion').post( function(req,res) { 
     

@@ -84,7 +84,7 @@ class pageBasket extends Component {
 
 
 if(data.qreury){
-console.log(data)
+console.log("data"+data)
   var code=this.state.productBasket.map((product) => product.code)
   var count=this.state.productBasket.map((product) => product.Price)
   console.log(count)
