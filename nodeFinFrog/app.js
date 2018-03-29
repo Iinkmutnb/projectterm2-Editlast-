@@ -157,6 +157,10 @@ router.route('/checkEmail').post( function(req, res) {
 
    access.checkEmail(res,req.body.email);
 }); 
+router.route('/selectOneCustomer').post( function(req, res) {
+    
+       access.selectOneCustomer(req,res,req.body.user);
+    });
 
 //var GoogleAuth; // Google Auth object.
 //function initClient() {

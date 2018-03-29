@@ -35,7 +35,9 @@ import DETAIL_CUSTOMER from './home/detaliCustomer.js';
 import EDIT_CUSTOMER from './home/editCustomer.js';
 import PAGE_LINE from './home/pageLine.js';
 import PAGE_BASKET from './home/pageBasket/pageBasket.js'
-import HEAD_PAGE_BASKET from './home/pageBasket/head.js'
+import PAGE_BASKET1 from './home/pageBasket/pageBasket1.js'
+import PAGE_BASKET2 from './home/pageBasket/pageBasket2.js'
+
 import DETAIL_PRODUCT_PROMOION from './home/pageProductPromotion/detailProductPromotion.js';
 import ADD_DETAIL_PRODUCT_PROMOTION from './home/pageProductPromotion/addDetailProductPromotion.js';
 import EDIT_DETAIL_PRODUCT_PROMOTION from './home/pageProductPromotion/editDetailProductPromotion.js';
@@ -286,11 +288,12 @@ class App extends Component {
         <tr>
              <td style={{width:'45%'}}></td>
              <td>  
-              <Route path='/pageBasket'   component={HEAD_PAGE_BASKET}/>
+             <Route path='/pageBasket'  render={(props) => <PAGE_BASKET setExact={this.setExact}/>}  />
              </td>
         </tr>
         </table>
-          <Route path='/pageBasket'  render={(props) => <PAGE_BASKET setExact={this.setExact}/>}  />
+          <Route path='/pageBasket/pageBasket1'  render={(props) => <PAGE_BASKET1 setExact={this.setExact}/>}  />
+          <Route path='/pageBasket/pageBasket2'  render={(props) => <PAGE_BASKET2 setExact={this.setExact}/>}  />
       </div>
       </BrowserRouter >
    

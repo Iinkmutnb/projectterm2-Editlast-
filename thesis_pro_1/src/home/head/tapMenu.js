@@ -124,7 +124,7 @@ showModalLogin=(value)=>{
          </Link>
       </li>
       <li>
-      <Link  to="/pageBasket" style={{outline:'0', textDecoration: 'none',marginHorizontal:'0px'}}  >
+      <Link  to="/pageBasket/pageBasket1" style={{outline:'0', textDecoration: 'none',marginHorizontal:'0px'}}  >
         
             ตระกร้าสินค้า
         </Link>

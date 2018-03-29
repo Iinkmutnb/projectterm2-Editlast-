@@ -44,6 +44,7 @@ var deleteDetailProductPromotion=require('./pageProductPromotion/deleteDetailPro
 var selectProdcutPromotionPageProductPro=require('./pageHome/selectProdcutPromotionPageProductPro.js');
 var selectOneProdcutPromotionPageProductPro=require('./pageHome/selectOneProdcutPromotionPageProductPro.js');
 var showPromotionInHome=require('./pageHome/showPromotionInHome.js');
+var selectOneCustomer=require('./pageBasket/selectOneCustomer.js');
 
 
 module.exports={
@@ -206,5 +207,9 @@ module.exports={
     showPromotionInHome: function(res) {
         
         showPromotionInHome.showPromotionInHome(res);
+    },
+    selectOneCustomer: function(req,res,user) {
+ 
+        selectOneCustomer.selectOneCustomer(req,res,user);
     },
 }
