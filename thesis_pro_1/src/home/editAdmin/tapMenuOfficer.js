@@ -16,19 +16,22 @@ class tapMenuProduct extends Component {
         if(window.location.pathname=="/editAdmin/officer/insert"){
             this.setState({checkActiveTabBar:1})
         }
-        else if(window.location.pathname=="/editAdmin/officer/edit"){
+        else if(window.location.pathname=="/editAdmin/officer/editOfficer"){
                 this.setState({checkActiveTabBar:2})
             }
-        else if(window.location.pathname=="/editAdmin/officer/delete"){
+        else if(window.location.pathname=="/editAdmin/officer/deleteOfficer"){
                 this.setState({checkActiveTabBar:3})
         }
         else if(window.location.pathname=="/editAdmin/officer/chageStatusCustomer"){
             this.setState({checkActiveTabBar:4})
     }
                
-        this.props.setExact(true,true,2);
+       // this.props.setExact(true,true,2);
      
 
+    }
+    componentDidMount() {
+        this.props.setExact(true,true,2);
     }
     setIsActiveTabBar=(value)=>{
             this.setState({checkActiveTabBar:value})

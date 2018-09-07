@@ -169,7 +169,7 @@ class pageBasket1 extends Component {
           <Content>
    
               
-                          <table> <tr> <td style={{width:'500px'}}> <a style={{outline:'0', textDecoration: 'none',border:'none'}} href="/">กลับหน้าหลัก</a></td><td><h1 className="fontMit">ตระกร้าสินค้า</h1></td></tr>
+                          <table> <tr> <td style={{width:'500px'}}> <a style={{outline:'0', textDecoration: 'none',border:'none'}} href="/">กลับหน้าหลัก</a></td><td><h1 className="fontMit">ตะกร้าสินค้า</h1></td></tr>
                           
                           </table>
                          
@@ -177,7 +177,7 @@ class pageBasket1 extends Component {
                           </Content>
                           
                               <div >  <table  style={{float: 'left',width:'65%'}}>
-  <tr style={{height:'50px'}}><td style={{ textAlign:'center', verticalAlign:'middle' }}>{this.state.countBasket} ชิ้น</td><td></td><td style={{width:'100px',  textAlign:'center', verticalAlign:'middle' }}>ราคา </td>
+  <tr style={{height:'50px'}}><td style={{ textAlign:'center', verticalAlign:'middle' }}>สินค้ารวมทั้งหมด {this.state.countBasket} ชิ้น</td><td></td><td style={{width:'100px',  textAlign:'center', verticalAlign:'middle' }}>ราคา </td>
                                   <td style={{width:'100px',  textAlign:'center', verticalAlign:'middle' }}>จำนวน</td></tr>                   
                                 {this.state.productBasket.map((product,key) =>  <tr style={{marginBottom:'150px'}}>                       
                                     <td><img style={{width:'200px',height:'150px'}} src={require('../../home/picture/product/'+product.Src)} alt="item1" /></td>
@@ -257,7 +257,7 @@ class pageBasket1 extends Component {
   <Content>
    
               
-                          <table> <tr> <td style={{width:'500px'}}> <a style={{outline:'0', textDecoration: 'none',border:'none'}} href="/">กลับหน้าหลัก</a></td><td><h1 className="fontMit">ตระกร้ายังไม่มีสินค้า</h1></td></tr>
+                          <table> <tr> <td style={{width:'500px'}}> <a style={{outline:'0', textDecoration: 'none',border:'none'}} href="/">กลับหน้าหลัก</a></td><td><h1 className="fontMit">ตะกร้ายังไม่มีสินค้า</h1></td></tr>
                           
                           </table>
                          

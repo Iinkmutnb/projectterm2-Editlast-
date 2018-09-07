@@ -111,7 +111,7 @@ class pageBasket2 extends Component {
                     },
         
             method: "POST",
-            body:  queryString.stringify({'userBuy':this.state.user,'userTypeBuy':this.state.userType})
+            body:  queryString.stringify({'userBuy':this.state.user,'userTypeBuy':this.state.userType,'count':this.state.countBasket,'price':this.state.totalBasket+50})
     
         })
         .then((response) => response.json())
@@ -165,7 +165,7 @@ class pageBasket2 extends Component {
    <center>
             <table style={{border:"0px solid"}}>
 
-                <tr><td  colSpan={2}><center><h1>ยืนยันตระกร้าสินค้า</h1></center></td></tr>
+                <tr><td  colSpan={2}><center><h1>ยืนยันตะกร้าสินค้า</h1></center></td></tr>
                 <tr>
                     <td style={{padding:"10px"}} >           <Message  style={{padding:"10px"}} header={<center>ที่อยู่จัดส่ง</center>} color="isPrimary">
                                         <table style={{width:'500px',padding:"10px"}}>
@@ -196,7 +196,7 @@ class pageBasket2 extends Component {
                                                     </Tr>
                                                     <Tr>
                                                         <Td style={{color:'grey'}}>จำนวนสินค้า</Td>
-                                                        <Td>{this.state.countBasket} ฿</Td>
+                                                        <Td>{this.state.countBasket} ชิ้น</Td>
                                                     </Tr>
                                                     <Tr>
                                                         <Td style={{color:'grey'}}>ค่าจัดส่ง</Td>

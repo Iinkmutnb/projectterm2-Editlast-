@@ -71,7 +71,7 @@ class pageBasket2 extends Component {
              <Content>
    
               
-             <table> <tr> <td style={{width:'500px'}}> <a style={{outline:'0', textDecoration: 'none',border:'none'}} href="/">กลับหน้าหลัก</a></td><td><h1 className="fontMit">ยืนยันตระกร้าสินค้า</h1></td></tr>
+             <table> <tr> <td style={{width:'500px'}}> <a style={{outline:'0', textDecoration: 'none',border:'none'}} href="/">กลับหน้าหลัก</a></td><td><h1 className="fontMit">ยืนยันตะกร้าสินค้า</h1></td></tr>
              
              </table>
                          
@@ -133,7 +133,7 @@ class pageBasket2 extends Component {
                                         </tr>
                          <tr>
                              <td>
-                                                <table > <tr> <td> ยืนยันตระกร้าสินค้า </td></tr>
+                                                <table > <tr> <td> ยืนยันตะกร้าสินค้า </td></tr>
                                             
                                             </table>
                                             </td>

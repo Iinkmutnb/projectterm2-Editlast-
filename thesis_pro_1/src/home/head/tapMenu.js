@@ -126,7 +126,7 @@ showModalLogin=(value)=>{
       <li>
       <Link  to="/pageBasket/pageBasket1" style={{outline:'0', textDecoration: 'none',marginHorizontal:'0px'}}  >
         
-            ตระกร้าสินค้า
+            ตะกร้าสินค้า
         </Link>
       </li>  
       <li>
@@ -135,13 +135,19 @@ showModalLogin=(value)=>{
         </Link>
       </li>
       <li>
+        <Link  to="/payment" style={{outline:'0', textDecoration: 'none'}} >
+            แจ้งชำระเงิน
+        </Link>
+      </li>
+   
+      <li>
         <Link  to="/s" style={{outline:'0', textDecoration: 'none'}} >
-            แผนที่ร้าน
+            วิธีชำระเงิน
         </Link>
       </li>
       <li>
         <Link  to="/s" style={{outline:'0', textDecoration: 'none'}} >
-            วิธีชำระเงิน
+            แผนที่ร้าน
         </Link>
       </li>
       <li>

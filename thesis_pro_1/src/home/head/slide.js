@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {ApSlideshow, ApSlideshowStyle} from 'apeman-react-slideshow';
-
+import {Addons,Input,  Columns ,Column,Notification,Group,Button,Modal,Content} from 're-bulma';
 
 
 class slide extends Component {
@@ -19,10 +19,19 @@ class slide extends Component {
       
  
          return (
-            <div>
-            
-               <img style={{ height:'150px',width:'200px' }} src={require('../../img/home/logofin.png')} />
+            <div  >
+          <Group >
+        <img  style={{ height:'150px',width:'200px',marginLeft:'30%' }} src={require('../../img/home/logofin.png')} />
+            <div style={{marginLeft:'50%',marginTop:'20%',width:'100%'}}>
+            <Addons color="isInfo">
+        <Input   type="text" placeholder="Find ad repository"  />
+  <Button color="isSuccess">Search</Button>
+  </Addons>
+  </div>
+  </Group>
+
          </div>
+       
 
          );}
     }

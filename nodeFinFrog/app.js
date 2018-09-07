@@ -235,7 +235,7 @@ router.route('/selectBasket').post( function(req, res) {
 });
 router.route('/inserBuyProduct').post( function(req, res) {
 
-   access.inserBuyProduct(req,res,req.body.userBuy,req.body.userTypeBuy);
+   access.inserBuyProduct(req,res,req.body.userBuy,req.body.userTypeBuy,req.body.count,req.body.price);
 });
 router.route('/inserDetailBuyProduct').post( function(req, res) { 
    
@@ -288,7 +288,44 @@ router.route('/selectOneProdcutPromotionPageProductPro').post( function(req,res)
 router.route('/showPromotionInHome').post( function(req,res) { 
     
        access.showPromotionInHome(res);
-});
+}); 
+router.route('/detailPayment').post( function(req,res) { 
+
+       access.detailPayment(req,res,req.body.user)
+}); 
+router.route('/insertAceptpayment').post( function(req,res) { 
+ 
+
+    access.insertAceptpayment(req,res,req.body.id,req.body.price,req.body.time,req.body.phone,req.body.file)
+    });
+router.route('/uploadImagePayment').post( function(req, res) {
+        access.uploadImagePayment(req,res);
+    });
+router.route('/detailPaymentOfOfficer').post( function(req, res) {
+        access.detailPaymentOfOfficer(req,res);
+    });
+router.route('/acceptPayment').post( function(req, res) {
+    
+        access.acceptPayment(req,res,req.body.id)
+    });
+router.route('/setAcceptPayment').post( function(req, res) {
+       // console.log(req.body.id)
+            access.setAcceptPayment(req,res,req.body.id)
+        });
+router.route('/insertCountDetailBuyProduct').post( function(req, res) {
+            
+                access.insertCountDetailBuyProduct(req,res,req.body.count_product,req.body.id_detail_buy_product)
+            });
+
+router.route('/deleteDetailBuyProduct').post( function(req, res) {
+    
+        access.deleteDetailBuyProduct(req,res,req.body.id_detail_buy_product)
+    });
+router.route('/deleteDetailBuyProductAll').post( function(req, res) {
+        
+            access.deleteDetailBuyProductAll(req,res,req.body.id)
+        });
+
 app.use('/', router);
 
 /*var express = require('express');

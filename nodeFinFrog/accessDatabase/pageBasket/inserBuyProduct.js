@@ -6,9 +6,9 @@ var connection =connection.connection();
 
 
 module.exports={
-    inserBuyProduct: function(req,res,userBuy,userTypeBuy) {
+    inserBuyProduct: function(req,res,userBuy,userTypeBuy,count,price) {
   
-        connection.query("INSERT INTO buy_product values(null,?,?)",[userBuy,userTypeBuy] ,function (err, result, fields) {
+        connection.query("INSERT INTO buy_product values(null,?,?,?,?)",[userBuy,userTypeBuy,count,price] ,function (err, result, fields) {
             if (err) { res.setHeader('Access-Control-Allow-Origin', '*'); return (res.json({'qreury':false}))}
           
                  

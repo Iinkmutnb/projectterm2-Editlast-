@@ -45,7 +45,15 @@ var selectProdcutPromotionPageProductPro=require('./pageHome/selectProdcutPromot
 var selectOneProdcutPromotionPageProductPro=require('./pageHome/selectOneProdcutPromotionPageProductPro.js');
 var showPromotionInHome=require('./pageHome/showPromotionInHome.js');
 var selectOneCustomer=require('./pageBasket/selectOneCustomer.js');
-
+var detailPayment=require('./payMent/detailPayment.js');
+var insertAceptpayment=require('./payMent/insertAceptpayment.js');
+var uploadImagePayment=require('./payMent/uploadImagePayment.js');
+var detailPaymentOfOfficer=require('./payMent/detailPaymentOfOfficer.js');
+var acceptPayment=require('./payMent/acceptPayment.js');
+var setAcceptPayment=require('./payMent/setAcceptPayment.js');
+var insertCountDetailBuyProduct=require('./payMent/insertCountDetailBuyProduct.js');
+var deleteDetailBuyProduct=require('./payMent/deleteDetailBuyProduct.js');
+var deleteDetailBuyProductAll=require('./payMent/deleteDetailBuyProductAll.js');
 
 module.exports={
     querys: function(name,res) {
@@ -164,8 +172,8 @@ module.exports={
     selectBasket: function(res,takeBasket) {
         selectBasket.selectBasket(res,takeBasket);
     },
-     inserBuyProduct: function(req,res,userBuy,userTypeBuy) {
-        inserBuyProduct.inserBuyProduct(req,res,userBuy,userTypeBuy);
+     inserBuyProduct: function(req,res,userBuy,userTypeBuy,count,price) {
+        inserBuyProduct.inserBuyProduct(req,res,userBuy,userTypeBuy,count,price);
     },
      inserDetailBuyProduct: function(req,res,id,code,count) {
         inserDetailBuyProduct.inserDetailBuyProduct(req,res,id,code,count);
@@ -212,4 +220,36 @@ module.exports={
  
         selectOneCustomer.selectOneCustomer(req,res,user);
     },
+    detailPayment: function(req,res,user) {
+       
+        detailPayment.detailPayment(req,res,user);
+    },
+    insertAceptpayment: function(req,res,id,price,time,phone,file) {
+        
+        insertAceptpayment.insertAceptpayment(req,res,id,price,time,phone,file)
+     },
+     uploadImagePayment: function(req,res) {
+        
+        uploadImagePayment.uploadImagePayment(req,res)
+     },    
+     detailPaymentOfOfficer: function(req,res) {
+        
+        detailPaymentOfOfficer.detailPaymentOfOfficer(req,res)
+     },
+     acceptPayment: function(req,res,id) {
+        acceptPayment.acceptPayment(req,res,id)
+     },
+     setAcceptPayment: function(req,res,id) {
+        setAcceptPayment.setAcceptPayment(req,res,id)
+     },
+     insertCountDetailBuyProduct: function(req,res,count_product,id_detail_buy_product) {
+        insertCountDetailBuyProduct.insertCountDetailBuyProduct(req,res,count_product,id_detail_buy_product)
+     },
+     deleteDetailBuyProduct: function(req,res,id_detail_buy_product) {
+            deleteDetailBuyProduct.deleteDetailBuyProduct(req,res,id_detail_buy_product)
+    },  
+        deleteDetailBuyProductAll: function(req,res,id) {
+            deleteDetailBuyProductAll.deleteDetailBuyProductAll(req,res,id)
+    }, 
+
 }

@@ -7,18 +7,31 @@ var connection =connection.connection();
 
 module.exports={
     inserDetailBuyProduct: function(req,res,id,code,count) {
-        console.log(count);
+     
+      
+
+    
+      console.log(code);
       var text =''
-      for(i=0;i<code.length;i++){
-          if(i==0){
+      if(Array.isArray(code)){
+          for(i=0;i<code.length;i++){
+              if(i==0){
               
-            text +=  "(null,'"+code[i]+"','"+count+"','"+id+"')"}
-          else { text +=  ",(null,'"+code[i]+"','"+count+"','"+id+"')";
-          console.log(count[i]);
+                  
+                text +=  "(null,'"+code[i]+"','"+count+"','"+id+"')"}
+              else { text +=  ",(null,'"+code[i]+"','"+count+"','"+id+"')";
+             
+            }
+
+          }
+        }
+        else{
+          
+       text +=  "(null,'"+code+"','"+count+"','"+id+"')"
+          
+            
         }
 
-      }
-    console.log(text);
  
        connection.query("INSERT INTO detail_buy_product VALUES "+text ,function (err, result, fields) {
       //  console.log(err)   

@@ -31,7 +31,7 @@ class menuSide extends Component {
     render() {
       
         return (
-            <div style={{/*border:'1px solid #C8C8C8',borderRadius: '12px',marginBottom:'15px',*/padding:'0px'}}>
+            <div >
      
     <header className="header" role="banner" >
     <h1 className="logo">

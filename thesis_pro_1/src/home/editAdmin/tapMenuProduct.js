@@ -30,7 +30,9 @@ class tapMenuProduct extends Component {
      console.log(userType)
 
     }
-    componentDidMount() {this.props.setExact(true,true,2);}
+    componentDidMount() {
+        this.props.setExact(true,true,2);
+    }
     setIsActiveTabBar=(value)=>{
             this.setState({checkActiveTabBar:value})
         
