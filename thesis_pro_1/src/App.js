@@ -214,12 +214,13 @@ class App extends Component {
          <Route path='/pageBasket'  render={(props) => <PAGE_BASKET setExact={this.setExact}/>}  />
         <Route path='/productAll:type'  render={(props) => <PRODUCT_ALL {...props} setExact={this.setExact}/>}  />  
         <Route path='/editAdmin'   render={(props) => <EDIT_ADMIN setExact={this.setExact}/>} />
-        <Columns>
+        <Columns style={{background:'white'}}>
                     <Column size="is2" style={{width:'260px'}}>
                     <Route path='/editAdmin'   render={(props) => <MENU_SIDE_ADMIN setExact={this.setExact}/>} />
                     </Column>
-                    <Column>
-                      <Column  style={{padding:'10px 1px 0px 5px'}}>
+                    <Column >
+                   
+                      <Column  style={{padding:'10px 1px 0px 5px' }}>
                       <Route path='/editAdmin/product'    render={(props) => <TAP_MENU_PRODUCT_ADMIN setExact={this.setExact}/>} />
                       <Route path='/editAdmin/officer'   render={(props) => <TAP_MENU_OFFICER_ADMIN setExact={this.setExact}/>} />
                       <Route path='/editAdmin/detailBuyProduct'   render={(props) => <DETAIL_BUY_PRODUCT setExact={this.setExact}/>} />
