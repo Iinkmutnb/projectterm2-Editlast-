@@ -133,6 +133,13 @@ class menuSide extends Component {
                             </Button>
                             </td>
                           </tr>
+                          <tr style={{marginTop:'0px',padding:'0px'}}>
+                          <td style={{padding:'0px',height:'40px'}}>
+                            <Button style={{width:"247px",height:'40px',padding:'0px'}}>
+                              <Link to="/editAdmin/connectAdmins/connectAdmin"  style={{outline:'0', textDecoration: 'none',marginTop:'0px',padding:'29px 102px 29px 85px'}}>ติดต่อสอบถาม</Link>
+                            </Button>
+                            </td>
+                          </tr>
                           </div>
                   </table>
                </Notification>

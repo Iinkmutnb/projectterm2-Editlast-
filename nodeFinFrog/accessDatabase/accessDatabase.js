@@ -54,7 +54,15 @@ var setAcceptPayment=require('./payMent/setAcceptPayment.js');
 var insertCountDetailBuyProduct=require('./payMent/insertCountDetailBuyProduct.js');
 var deleteDetailBuyProduct=require('./payMent/deleteDetailBuyProduct.js');
 var deleteDetailBuyProductAll=require('./payMent/deleteDetailBuyProductAll.js');
-
+var checkConnect=require('./pageConnect/checkConnect.js');
+var insertConnect=require('./pageConnect/insertConnect.js');
+var uploadImageConnect=require('./pageConnect/uploadImageConnect.js');
+var selectConnect=require('./pageConnect/selectConnect.js');
+var selectOneConnect=require('./pageConnect/selectOneConnect.js');
+var insertConnectBack=require('./pageConnect/insertConnectBack.js');
+var selectConnectCustomer=require('./pageConnect/selectConnectCustomer.js');
+var selectOneConnectCustomer=require('./pageConnect/selectOneConnectCustomer.js');
+var selectOneConnectOfficer=require('./pageConnect/selectOneConnectOfficer.js');
 module.exports={
     querys: function(name,res) {
         querys.querys(name,res);
@@ -251,5 +259,34 @@ module.exports={
         deleteDetailBuyProductAll: function(req,res,id) {
             deleteDetailBuyProductAll.deleteDetailBuyProductAll(req,res,id)
     }, 
+    checkConnect: function(req,res,file) {
+        checkConnect.checkConnect(req,res,file)
+    }, 
+    insertConnect:function(req,res,topic,id_buy_product,file,detail) {
+       
+        insertConnect.insertConnect(req,res,topic,id_buy_product,file,detail)
+    },
+    uploadImageConnect:function(req,res) {
+        uploadImageConnect.uploadImageConnect(req,res)
+    },
+    selectConnect:function(req,res,id) {
+        selectConnect.selectConnect(req,res,id)
+    },
+    selectOneConnect:function(req,res,id) {
+        selectOneConnect.selectOneConnect(req,res,id)
+    },
+    insertConnectBack:function(req,res,detail_con_back,idconnect) {
+        insertConnectBack.insertConnectBack(req,res,detail_con_back,idconnect)
+    },
+    selectConnectCustomer:function(req,res) {
+        selectConnectCustomer.selectConnectCustomer(req,res)
+    },
+    selectOneConnectCustomer:function(req,res,id) {
+        selectOneConnectCustomer.selectOneConnectCustomer(req,res,id)
+    }
+    ,selectOneConnectOfficer:function(req,res,id) {
+        selectOneConnectOfficer.selectOneConnectOfficer(req,res,id)
+    },
+
 
 }

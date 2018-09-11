@@ -325,6 +325,45 @@ router.route('/deleteDetailBuyProductAll').post( function(req, res) {
         
             access.deleteDetailBuyProductAll(req,res,req.body.id)
         });
+router.route('/checkConnect').post( function(req, res) {
+        
+            access.checkConnect(req,res,req.body.file)
+        });
+router.route('/insertConnect').post( function(req, res) {
+  
+            
+                access.insertConnect(req,res,req.body.topic,req.body.id_buy_product,req.body.file,req.body.detail)
+            });
+router.route('/uploadImageConnect').post( function(req, res) {
+            
+                    access.uploadImageConnect(req,res)
+            });
+router.route('/selectConnect').post( function(req, res) {
+                
+                        access.selectConnect(req,res,req.body.id)
+                });
+router.route('/selectOneConnect').post( function(req, res) {
+                    
+            access.selectOneConnect(req,res,req.body.id)
+});
+router.route('/insertConnectBack').post( function(req, res) {
+    
+access.insertConnectBack(req,res,req.body.detail_con_back,req.body.idconnect)
+});
+router.route('/selectConnectCustomer').post( function(req, res) {
+    
+access.selectConnectCustomer(req,res)
+});
+router.route('/selectOneConnectCustomer').post( function(req, res) {
+    console.log(req.body.id)  
+access.selectOneConnectCustomer(req,res,req.body.id)
+
+});
+router.route('/selectOneConnectOfficer').post( function(req, res) {
+    console.log(req.body.id)
+access.selectOneConnectOfficer(req,res,req.body.id)
+});
+
 
 app.use('/', router);
 

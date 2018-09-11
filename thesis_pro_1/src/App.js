@@ -47,6 +47,14 @@ import ALL_PAYMENT from './home/payment/allPaymet.js';
 import UPLOAD_PAYMENT from './home/payment/uploadPayment.js';
 import ACCEPT_PAYMENT from './home/payment/acceptPayment.js';
 import DETAIL_PAYMENT from './home/payment/detailPayment.js';
+import PAGE_CONNECT from './home/pageConnect/connect.js';
+import CONNECT_ADMIN from './home/editAdmin/connectAdmin.js';
+import CONNECT_ADMIN2 from './home/editAdmin/connectAdmin2.js';
+import CONNECT_ADMIN3 from './home/editAdmin/connectAdmin3.js';
+import TAP_MENU_CONNECT_ADMIN from './home/editAdmin/tapMenuConnectAdmin.js';
+import CONNECT_ADMIN_BACK from './home/editAdmin/connectAdminBack.js';
+import SELECT_CONECT from './home/pageConnect/selectConnect.js';
+import SHOW_CONNECT_BACK_CUSTOMER from './home/pageConnect/showconnectBackCustomer.js';
 import queryString from 'query-string';
 import './home/css/login/bootstrap.min.css';
 
@@ -74,6 +82,18 @@ class App extends Component {
     }
     if(window.location.pathname=="/register"){
       this.setState({exact:true})
+    }
+    if(window.location.pathname=="/editAdmin/connectAdmins/connectAdmin"){
+      this.setExact(true,true,2)
+    }
+    if(window.location.pathname=="/editAdmin/connectAdmins/connectAdmin2"){
+      this.setExact(true,true,2)
+    }
+    if(window.location.pathname=="/editAdmin/connectAdmins/connectAdmin3"){
+      this.setExact(true,true,2)
+    }
+    if(window.location.pathname=="/editAdmin/connectAdmins/connectAdminBack"){
+      this.setExact(true,true,2)
     }
    /* if(window.location.pathname=="/editAdmin/product/insert"){
       this.setState({exact:true,exactProdcut:true,page:2})
@@ -174,10 +194,15 @@ class App extends Component {
                  <Route path='/payment'  render={(props) => <ALL_PAYMENT  setExact={this.setExact}/>}  /> 
                  <Route path='/uploadPayment:id'   render={(props) => < UPLOAD_PAYMENT   {...props} setExact={this.setExact}/>} /> 
                  <Route path='/acceptPayment:id'   render={(props) => < ACCEPT_PAYMENT   {...props} setExact={this.setExact}/>} />     
-                 <Route path='/detailPayment:id'   render={(props) => < DETAIL_PAYMENT   {...props} setExact={this.setExact}/>} /> 
+                 <Route path='/detailPayment:id'   render={(props) => < DETAIL_PAYMENT   {...props} setExact={this.setExact}/>} />
+                 <Route path='/connect'   render={(props) => < PAGE_CONNECT   {...props} setExact={this.setExact}/>} /> 
+                 <Route path='/selectConnect'   render={(props) => < SELECT_CONECT   {...props} setExact={this.setExact}/>} /> 
+                 <Route path='/showconnectBackCustomer:code'   render={(props) => < SHOW_CONNECT_BACK_CUSTOMER   {...props} setExact={this.setExact}/>} /> 
+   
+                 
                         
              </td></tr>
-           <tr><td colSpan={2}><Route path='/' exact={this.state.exact}   component={BUTTON_FACE_LINE}/></td></tr>
+        
            </table>
    
                  
@@ -223,6 +248,8 @@ class App extends Component {
                       <Column  style={{padding:'10px 1px 0px 5px' }}>
                       <Route path='/editAdmin/product'    render={(props) => <TAP_MENU_PRODUCT_ADMIN setExact={this.setExact}/>} />
                       <Route path='/editAdmin/officer'   render={(props) => <TAP_MENU_OFFICER_ADMIN setExact={this.setExact}/>} />
+                      <Route path='/editAdmin/connectAdmins'   render={(props) => <TAP_MENU_CONNECT_ADMIN setExact={this.setExact}/>} />
+                      
                       <Route path='/editAdmin/detailBuyProduct'   render={(props) => <DETAIL_BUY_PRODUCT setExact={this.setExact}/>} />
                       <Route path='/editAdmin/detailBuyProducts:id'   render={(props) => <DETAIL_BUY_PRODUCTS {...props}  setExact={this.setExact}/>} />
                       </Column>
@@ -243,7 +270,13 @@ class App extends Component {
                         
                         <Route path='/editAdmin/productPromotion'   render={(props) => <DETAIL_PRODUCT_PROMOION {...props}   setExact={this.setExact}/>} />  
                         <Route path='/editAdmin/addDetailProductPromotion'   render={(props) => <ADD_DETAIL_PRODUCT_PROMOTION    setExact={this.setExact}/>} />
-                        <Route path='/editAdmin/editDetailProductPromotion:id'   render={(props) => < EDIT_DETAIL_PRODUCT_PROMOTION   {...props} setExact={this.setExact}/>} />   
+                        <Route path='/editAdmin/editDetailProductPromotion:id'   render={(props) => < EDIT_DETAIL_PRODUCT_PROMOTION   {...props} setExact={this.setExact}/>} />
+                        <Route path='/editAdmin/connectAdmins/connectAdmin'   render={(props) => < CONNECT_ADMIN  {...props}  setExact={this.setExact}/>} /> 
+                        <Route path='/editAdmin/connectAdmins/connectAdmin2'   render={(props) => < CONNECT_ADMIN2  {...props}  setExact={this.setExact}/>} /> 
+                        <Route path='/editAdmin/connectAdmins/connectAdmin3'   render={(props) => < CONNECT_ADMIN3  {...props}  setExact={this.setExact}/>} />  
+                        <Route path='/editAdmin/connectAdmins/connectAdminBack:id'   render={(props) => < CONNECT_ADMIN_BACK  {...props}  setExact={this.setExact}/>} />
+                        
+                        
                       </Column>
                     </Column>
                    
@@ -375,5 +408,5 @@ export default App;
            
 
 */
-
+//    <tr><td colSpan={2}><Route path='/' exact={this.state.exact}   component={BUTTON_FACE_LINE}/></td></tr>
 

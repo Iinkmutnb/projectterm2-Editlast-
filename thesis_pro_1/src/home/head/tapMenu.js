@@ -151,7 +151,7 @@ showModalLogin=(value)=>{
         </Link>
       </li>
       <li>
-        <Link  to="/s" style={{outline:'0', textDecoration: 'none'}} >
+        <Link  to="/connect" style={{outline:'0', textDecoration: 'none'}} >
             ติดต่อ
         </Link>
       </li>
