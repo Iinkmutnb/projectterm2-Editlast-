@@ -55,6 +55,13 @@ import TAP_MENU_CONNECT_ADMIN from './home/editAdmin/tapMenuConnectAdmin.js';
 import CONNECT_ADMIN_BACK from './home/editAdmin/connectAdminBack.js';
 import SELECT_CONECT from './home/pageConnect/selectConnect.js';
 import SHOW_CONNECT_BACK_CUSTOMER from './home/pageConnect/showconnectBackCustomer.js';
+import PAGE_REVIEW from './home/pageReview/review.js';
+import PAGE_INSERT_REVIEW from './home/pageReview/insertReview.js';
+import SELECT_ONE_REVIEW from './home/pageReview/selectOneReview.js';
+import TAP_MENU_REVIEW_ADMIN from './home/editAdmin/tapMenuReviewAdmin.js';
+import REVIEW_ADMIN1 from './home/editAdmin/reviewAdmin1.js';
+import REVIEW_ADMIN2 from './home/editAdmin/reviewAdmin2.js';
+import REVIEW_ADMIN3 from './home/editAdmin/reviewAdmin3.js';
 import queryString from 'query-string';
 import './home/css/login/bootstrap.min.css';
 
@@ -198,9 +205,14 @@ class App extends Component {
                  <Route path='/connect'   render={(props) => < PAGE_CONNECT   {...props} setExact={this.setExact}/>} /> 
                  <Route path='/selectConnect'   render={(props) => < SELECT_CONECT   {...props} setExact={this.setExact}/>} /> 
                  <Route path='/showconnectBackCustomer:code'   render={(props) => < SHOW_CONNECT_BACK_CUSTOMER   {...props} setExact={this.setExact}/>} /> 
-   
-                 
-                        
+                 <Route path='/review'   render={(props) => < PAGE_REVIEW   {...props} setExact={this.setExact}/>} /> 
+                 <Route path='/insertReview'   render={(props) => < PAGE_INSERT_REVIEW   {...props} setExact={this.setExact}/>} /> 
+                 <Route path='/selectOneReview:code'   render={(props) => < SELECT_ONE_REVIEW   {...props} setExact={this.setExact}/>} /> 
+                 <Route path='/editAdmin/reviewAdmins'   render={(props) => <TAP_MENU_REVIEW_ADMIN setExact={this.setExact}/>} />
+                 <Route path='/editAdmin/reviewAdmins/reviewAdmin1'   render={(props) => < REVIEW_ADMIN1  {...props}  setExact={this.setExact}/>} /> 
+                 <Route path='/editAdmin/reviewAdmins/reviewAdmin2'   render={(props) => < REVIEW_ADMIN2  {...props}  setExact={this.setExact}/>} />
+                 <Route path='/editAdmin/reviewAdmins/reviewAdmin3:code'   render={(props) => < REVIEW_ADMIN3  {...props}  setExact={this.setExact}/>} />    
+                  
              </td></tr>
         
            </table>
@@ -249,6 +261,8 @@ class App extends Component {
                       <Route path='/editAdmin/product'    render={(props) => <TAP_MENU_PRODUCT_ADMIN setExact={this.setExact}/>} />
                       <Route path='/editAdmin/officer'   render={(props) => <TAP_MENU_OFFICER_ADMIN setExact={this.setExact}/>} />
                       <Route path='/editAdmin/connectAdmins'   render={(props) => <TAP_MENU_CONNECT_ADMIN setExact={this.setExact}/>} />
+                      <Route path='/editAdmin/reviewAdmins'   render={(props) => <TAP_MENU_REVIEW_ADMIN setExact={this.setExact}/>} />
+                      
                       
                       <Route path='/editAdmin/detailBuyProduct'   render={(props) => <DETAIL_BUY_PRODUCT setExact={this.setExact}/>} />
                       <Route path='/editAdmin/detailBuyProducts:id'   render={(props) => <DETAIL_BUY_PRODUCTS {...props}  setExact={this.setExact}/>} />
@@ -275,7 +289,9 @@ class App extends Component {
                         <Route path='/editAdmin/connectAdmins/connectAdmin2'   render={(props) => < CONNECT_ADMIN2  {...props}  setExact={this.setExact}/>} /> 
                         <Route path='/editAdmin/connectAdmins/connectAdmin3'   render={(props) => < CONNECT_ADMIN3  {...props}  setExact={this.setExact}/>} />  
                         <Route path='/editAdmin/connectAdmins/connectAdminBack:id'   render={(props) => < CONNECT_ADMIN_BACK  {...props}  setExact={this.setExact}/>} />
-                        
+                        <Route path='/editAdmin/reviewAdmins/reviewAdmin1'   render={(props) => < REVIEW_ADMIN1  {...props}  setExact={this.setExact}/>} /> 
+                        <Route path='/editAdmin/reviewAdmins/reviewAdmin2'   render={(props) => < REVIEW_ADMIN2  {...props}  setExact={this.setExact}/>} /> 
+                        <Route path='/editAdmin/reviewAdmins/reviewAdmin3:code'   render={(props) => < REVIEW_ADMIN3  {...props}  setExact={this.setExact}/>} />  
                         
                       </Column>
                     </Column>

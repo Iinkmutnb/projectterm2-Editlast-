@@ -63,6 +63,13 @@ var insertConnectBack=require('./pageConnect/insertConnectBack.js');
 var selectConnectCustomer=require('./pageConnect/selectConnectCustomer.js');
 var selectOneConnectCustomer=require('./pageConnect/selectOneConnectCustomer.js');
 var selectOneConnectOfficer=require('./pageConnect/selectOneConnectOfficer.js');
+var checkReview=require('./pageReview/checkReview.js');
+var insertReview=require('./pageReview/insertReview.js');
+var uploadImageReview=require('./pageReview/uploadImageReview.js');
+var selectReview=require('./pageReview/selectReview.js');
+var selectOneReview=require('./pageReview/selectOneReview.js');
+var deleteReview=require('./pageReview/deleteReview.js');
+var updateReview=require('./pageReview/updateReview.js');
 module.exports={
     querys: function(name,res) {
         querys.querys(name,res);
@@ -287,6 +294,30 @@ module.exports={
     ,selectOneConnectOfficer:function(req,res,id) {
         selectOneConnectOfficer.selectOneConnectOfficer(req,res,id)
     },
+    checkReview: function(req,res,file) {
+        checkConnect.checkConnect(req,res,file)
+    },
+        insertReview: function(req,res,topic,name_product,file,detail,userName,link) {
+            insertReview.insertReview(req,res,topic,name_product,file,detail,userName,link)
+    },
+    uploadImageReview:function(req,res) {
+        //console.log("uploadImageReview")
+        uploadImageReview.uploadImageReview(req,res)
+    },
+    selectReview:function(req,res) {
+        selectReview.selectReview(req,res)
+    },
+    selectOneReview: function(req,res,id) {
+        selectOneReview.selectOneReview(req,res,id)
+    },
+    deleteReview: function(req,res,id_review) {
+        deleteReview.deleteReview(res,id_review)
+    },
+    
+    updateReview: function(req,res,id_review) {
+        updateReview.updateReview(res,id_review)
+    },
+
 
 
 }

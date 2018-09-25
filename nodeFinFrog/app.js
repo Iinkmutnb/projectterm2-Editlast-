@@ -363,9 +363,38 @@ router.route('/selectOneConnectOfficer').post( function(req, res) {
     console.log(req.body.id)
 access.selectOneConnectOfficer(req,res,req.body.id)
 });
+router.route('/checkReview').post( function(req, res) {
+    
+        access.checkReview(req,res,req.body.file)
+    });
 
 
 app.use('/', router);
+router.route('/insertReview').post( function(req, res) {
+    
+              
+                  access.insertReview(req,res,req.body.topic,req.body.name_product,req.body.file,req.body.detail,req.body.userName,req.body.link)
+              });
+router.route('/uploadImageReview').post( function(req, res) {
+            
+                        access.uploadImageReview(req,res)
+});
+router.route('/selectReview').post( function(req, res) {
+    
+            access.selectReview(req,res)
+});
+router.route('/selectOneReview').post( function(req, res) {
+    
+            access.selectOneReview(req,res,req.body.id)
+});
+router.route('/deleteReview').post( function(req, res) {
+  
+            access.deleteReview(req,res,req.body.id_review)
+});
+router.route('/updateReview').post( function(req, res) {
+   console.log(req.body.id_review)
+            access.updateReview(req,res,req.body.id_review)
+});
 
 /*var express = require('express');
 var app = express();

@@ -130,7 +130,7 @@ showModalLogin=(value)=>{
         </Link>
       </li>  
       <li>
-        <Link  to="/s" style={{outline:'0', textDecoration: 'none'}} >
+        <Link  to="/review" style={{outline:'0', textDecoration: 'none'}} >
             รีวิวสินค้า
         </Link>
       </li>
